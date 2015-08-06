@@ -1,0 +1,106 @@
+<div class="content"><div class="ic"></div>
+				<div class="container_12">
+					<div class="grid_5">
+						<h3>Registration Form</h3>
+						<form id="bookingForm" action="" method="post">
+							<div class="fl1">
+								<div class="tmInput">
+									<input name="username" placeHolder="Username" type="text" data-constraints='@NotEmpty @Required @AlphaSpecial'>
+								</div>
+								<div class="tmInput">
+									<input name="password" placeHolder="Password" type="text" data-constraints="@NotEmpty @Required ">
+								</div>
+							</div>
+							<div class="fl1">
+								<div class="tmInput">
+									<input name="Email" placeHolder="Email" type="text" data-constraints="@NotEmpty @Required @Email">
+								</div>
+								<div class="tmInput mr0">
+									<input name="confirmpasswd" placeHolder="Confirm Password" type="text" data-constraints="@NotEmpty @Required">
+								</div>
+							</div>
+							<div class="clear"></div>
+							<strong>Name</strong>
+							<div class="tmInput">
+								<input name="fullname" placeHolder="Full Name" type="text" data-constraints="@NotEmpty @Required">
+							</div>
+							<div class="clear"></div>
+							<strong>D O B</strong>
+							<label class="tmDatepicker">
+								<input type="text" name="Date"	placeHolder='20/05/2014' data-constraints="@NotEmpty @Required @Date">
+							</label><br>
+							<div class="clear"></div>
+							<div class="tmRadio">
+								<p>Gender</p>
+								<input name="gender" type="radio" id="tmRadio0" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' checked/>
+								<span>Male</span>
+								<input name="gender" type="radio" id="tmRadio1" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' />
+								<span>Female</span>
+								<input name="gender" type="radio" id="tmRadio2" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' />
+								<span>Other</span>
+							</div>
+							<div class="clear"></div>
+							<div class="tmTextarea">
+								<textarea name="Address" placeHolder="Address" data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>
+							</div>
+							<div class="fl1 fl2">
+								
+							
+								<div class="clear height1"></div>
+							</div>
+							<div class="fl1 fl2">
+							
+							</div>
+							<div class="clear"></div>
+							
+							<!-- <a class="btn" data-type="submit" name="submit"  onclick="document.getElementById('bookingForm').submit();"  >Submit</a>-->
+							<input type="submit" name="submit" value="Submit"id="btn" >
+						</form>
+					</div>
+					
+					
+					<?php
+                        if(isset($_POST['submit'])){
+                            $uname=$_POST['username'];
+                            $pword=$_POST['password'];
+                            $query= "INSERT INTO registration_form(username,password) VALUES ('$uname','$pword') ";
+                            $result = mysqli_query($conn, $query);
+                            echo"hi";
+                            // onclick="document.forms['name_of_your_form'].submit();    <noscript><input type="submit" ... /></noscript>
+                        }
+					?>
+					
+					
+					<div class="grid_6 prefix_1">
+						  
+						
+					<div class="content"><div class="ic"></div>
+			
+				<div class="container_12"></div>
+					<div class="grid_5">
+						<h3>Sign In</h3>
+						<form id="bookingForm">
+						  
+						  <strong>User Name
+							<div class="">
+								<input name="uname" placeHolder="User Name" type="text" data-constraints="@NotEmpty @Required">
+							</div></strong>
+							 <strong>Password
+							<div class="">
+								<input name="passwd" placeHolder="Password" type="text" data-constraints="@NotEmpty @Required">
+							</div></strong><div class="clear"></div>
+						<!--  <a href="#" class="btn" data-type="submit" name="submit">Submit</a>--><br>
+						
+						<input type="submit" name="submit" value="Submit" >
+					</form></div></div>
+							</div>
+						<div class="grid_6 prefix_1">
+						<a href="https://www.facebook.com/dialog/oauth?client_id=541457832663644&amp;redirect_uri=http%3A%2F%2F174.79.32.158%3A10088%2Fstudents%2Fphp02%2FSocialLogin%2FFacebook%2Fexamples%2Fexample.php&amp;state=0ea882b9b6c8d7ae7ed7c16b5f39b999&amp;sdk=php-sdk-3.2.3" class="type"><img src="images/facebook.jpg" alt=""><span class="type_caption">Login With Facebook</span></a>
+						
+					</div>
+						
+				
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>

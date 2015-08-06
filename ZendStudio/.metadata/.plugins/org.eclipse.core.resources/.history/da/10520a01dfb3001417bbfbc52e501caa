@@ -1,0 +1,98 @@
+<?php
+
+
+function printLine($line)
+{
+    $file= fopen('all_lines.txt', 'a+');
+    date_default_timezone_set('UTC');
+    $dateline= date("Y-m-d h:i:sa"). ": $line"."\r\n ";
+    fputs($file, $dateline);
+   // $stars= "************************************************\r\n";
+   // fputs($file, $stars);
+    fclose($file);
+}
+ 
+
+function displayHeader($heading1, $heading2)
+{
+   $file=fopen('title.txt', 'a+');
+   $str=$heading1."\r\n".$heading2;
+   fputs($file, $str);
+   fclose($file);
+   
+}
+echo displayHeader("the main heading","the sub heading");
+function timeAgo($time)
+{
+   
+
+    $get_time = time() - $time;
+
+    if( $get_time < 1 )
+    {
+        return 'less than 1 second ago';
+    }
+
+    $condition = array( 
+                12 * 30 * 24 * 60 * 60  =>  'year',
+                30 * 24 * 60 * 60       =>  'month',
+                24 * 60 * 60            =>  'day',
+                60 * 60                 =>  'hour',
+                60                      =>  'minute',
+                1                       =>  'second'
+    );
+
+    foreach( $condition as $secs => $str )
+    {
+        $d = $get_time / $secs;
+
+        if( $d >= 1 )
+        {
+            $r = round( $d );
+            return 'about ' . $r . ' ' . $str . ( $r > 1 ? 's' : '' ) . ' ago';
+        }
+    }
+}
+
+
+function loadComment()
+{
+    $arraycomment = array();
+    $allfiles=glob("*.comment");
+    
+    foreach($allfiles as $k)
+    {
+       $comments= file_get_contents($k);
+       $arraycomment[] = explode('|', $comments);
+       
+    }
+    return $arraycomment;
+    var_dump($arraycomment);
+}
+
+function saveComment($name,$hour,$mycomment)
+{
+    $atime=timeAgo($hour);
+    
+  $commentstring= $name.' | '.$mycomment.' | '.$atime;
+  $filename=$hour.".comment";
+  
+  file_put_contents($filename, $commentstring);
+  
+}
+function outputComment(array $comment1)
+{
+    printLine("Name: " . $comment1[0]);
+    printLine("Comment: " . $comment1[1]);
+    printLine("Time: " . $comment1[2]);
+    $stars="***********************";
+    printLine($stars);
+    
+echo "Name: ".  $comment1[0].'<br>';
+
+echo "comment: ".  $comment1[1].'<br>';
+
+echo "time: ".  $comment1[2].'<br>';
+echo "****************************<br>";
+}
+

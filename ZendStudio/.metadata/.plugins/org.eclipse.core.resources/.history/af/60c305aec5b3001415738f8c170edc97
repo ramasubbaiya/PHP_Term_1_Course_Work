@@ -1,0 +1,14 @@
+<?php
+function loadComments()
+{
+    $array=array();
+    
+    $file=glob("*.comment");
+   foreach($file as $k=>$v)
+    $array[]=file_get_contents($v);
+    foreach($load as $k1 as $v1)
+    $load[$k1]=explode("|",$array[$v1]);
+    print_r($load);
+//echo $load;        
+     
+}loadComments();

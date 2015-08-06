@@ -1,0 +1,20 @@
+<?php
+
+function createComment($name,$comment,$Time){
+     
+    $result=array(
+        'name',
+        'comment',
+        'Time'
+
+    );
+ //   return $result;
+}
+
+print_r($result);
+//echo $result['name'];
+
+
+function outputComment($comment){
+  //  printline createComment('Muthu', 'IPRC', '06:10AM');
+}

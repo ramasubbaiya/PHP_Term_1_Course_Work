@@ -1,0 +1,16 @@
+<?php
+$conn=mysqli_connect('127.0.01','PHP02','PHP02','PHP02');
+
+$query= "   SELECT * FROM users";
+
+$result=mysqli_query($conn,$query);
+
+while($row = mysqli_fetch_array($result)){
+    
+    echo "Username :".$row['username'].'<br><br> Email :' . $row['email'] .'<br>';
+    
+    
+}
+mysqli_close($conn);
+
+?>

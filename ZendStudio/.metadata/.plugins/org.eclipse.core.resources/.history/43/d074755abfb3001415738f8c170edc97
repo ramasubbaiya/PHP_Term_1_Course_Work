@@ -1,0 +1,7 @@
+<?php
+
+$file = file_get_contents("http://www.gsmarena.com"); //in college the admin has blocked this website
+
+echo $file;
+
+?>

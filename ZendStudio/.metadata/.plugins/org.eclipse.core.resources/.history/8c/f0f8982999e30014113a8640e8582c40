@@ -1,0 +1,54 @@
+<?php
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+} else {
+    die("Error");
+}
+    
+    $idCheck = $conn->query("SELECT * FROM forum_post WHERE post_id='$id' ");
+    
+    //$idCheck= mysqli_fetch_array($idCheck);
+    while ($array=mysqli_fetch_array($idCheck)){
+        print_r($array);
+        $var = 1;
+        ?>
+        
+        <div class="grid_6 prefix_1"><?php 
+        if($var==1){
+        echo  '<p id="pheading">'.$array['post_title'].'</p>';}
+        echo '<p id="psubheading">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$array['post_body'].'</p></br>';?>
+        </div><div class="clear"></div>
+        
+        <div class="clear"></div>
+        
+        <?php 
+        
+    }
+    $var++;
+    if($idCheck->num_rows !== 1){  
+        die("Error");
+        
+    }?>
+    
+    <div class="container_12">
+    <div class="grid_5">
+    <form id="bookingForm" action="" method="post">
+    
+        <div class="clear"></div>
+    
+        <div class="tmTextarea">
+        <textarea name="forumcomment" placeHolder="Post your Comments"
+            data-constraints='@NotEmpty @Required'></textarea>
+            </div>
+            <input type="submit" name="fsubmit" value="Submit">
+            </form>
+            </div>
+            </div>
+            <div class="clear"></div>
+            </br>
+            </br>
+            </br><div class="grid_6 prefix_1">
+            <a href="index.php?page=webforum"><p id="psubheading">Go Back</p></a>
+        </div>     <div class="clear"></div>
+    

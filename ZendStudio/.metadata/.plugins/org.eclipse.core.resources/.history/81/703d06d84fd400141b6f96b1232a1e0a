@@ -1,0 +1,10 @@
+<?php
+$page = isset($_POST['page']) ? $_POST['page'] : 'home';
+
+include('Navigation/header.php');
+
+include('Navigation/nav.php');
+
+include("Navigation/$page.php");
+
+include('Navigation/footer.php');

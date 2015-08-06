@@ -1,0 +1,11 @@
+<?php
+$file=fopen("all_lines.txt","a");
+$datedLine=date('Y-m-d G:i:s');
+if(!$file){
+   echo"File failed to load";
+    }
+    else{
+        fputs($file,"$datedLine".''.$line);
+    }fclose($file);
+    
+    ?>

@@ -1,0 +1,8 @@
+<?php
+$title="planetary information"
+    echo "<html>";
+echo "<h1>";
+echo $title;
+echo"</h1>"
+echo "</html>";
+?>

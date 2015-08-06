@@ -1,0 +1,47 @@
+
+<?php 
+
+//Connect to the MySQL server using mysqli_connect() with error checking
+$conn=mysqli_connect("127.0.0.1","PHP02", "PHP02", "PHP02");
+
+if(mysqli_connect_errno()){
+    printf("Connect failed :%s\n",mysqli_connect_error());
+    exit();
+}else{
+    echo"success";   
+}
+
+//Retrieve the username, email, passwd, and confirmPasswd from the $_POST array
+
+if(isset($_POST['submit'])){
+$username=$_POST['username'];
+$passwd=$_POST['passwd'];
+$email=$_POST['email'];
+$confirmpasswd=$_POST['confirmPasswd'];
+}
+
+$len=strlen($passwd);
+
+//Verify that the user's password matches and   least 6 characters long
+if(($passwd==$confirmpasswd)&&($len>6))
+{
+$query="INSERT INTO users(username,passwd,email) VALUES('$username','$passwd','$email')";
+$result=mysqli_escape_string($conn,$query);
+echo"Successfully Created!!";
+}else{
+    
+    
+    ?>
+    <html><head></head><body><a href="index.php "><?php echo"Try Again!"; ?></a></body></html>
+    <?php
+}
+$query1="SELECT * FROM users WHERE username='$username' ";
+$result1=mysqli_query($conn,$query1);
+if($result1>0){
+      echo"Username already exists";
+    
+}
+
+?>
+
+

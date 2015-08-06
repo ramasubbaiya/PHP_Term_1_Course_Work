@@ -1,0 +1,23 @@
+<?php
+
+function createComment($result){
+     
+    $result=array(
+        'name',
+        'comment',
+        'Time'
+
+    );
+    print_r($result);
+    return $result;
+}
+
+
+//echo $result['name'];
+
+
+function outputComment($comment){
+    
+
+}
+

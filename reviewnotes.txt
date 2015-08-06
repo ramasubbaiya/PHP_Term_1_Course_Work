@@ -1,0 +1,24 @@
+- creating projects, running CLI apps, resetting perspective
+- $variables
+- data types, casting, type juggling
+- "double quotes allows $variables"
+- 'single quotes does now allow $variables"
+- if, else, else if, switch
+- + - * / % 
+- += -= *= /= %=
+- && || ^ and xor or
+- arrays, associative arrays, multidimensional arrays
+- is_array, array_rand, count, array_key_exists
+- for, foreach, while,do-while
+- continue, break
+- functions, parameters, references return values
+- variable scope
+- trim, strlen, strtolower, strtoupper, explode
+- f_open, fwrite, fread, r, w, a
+- file_get_contents, file_put_contents
+- date, time, strtotime
+- define("name","value")
+- globals, $_GLOBALS
+- $_GET, $_POST, $_COOKIE, $_SESSION
+- set_cookie, session_start, session_destroy
+- mysqli_connect, query, fetch_array, mysqli_errno, mysqli_error, mysqli_real_escape_string

@@ -1,0 +1,21 @@
+<?php
+
+function createComment($name,$comment,$time){
+     
+    $result=array(
+        $name,$comment,$time
+
+    );
+    return $result;
+}
+
+
+function outputComment($comment){
+   
+    $arr=createComment('Ram','Awesome Program','6:30');
+    echo 'Name : '.$arr[0].'<br>';
+    echo 'Comment : '.$arr[1].'<br>';
+    echo 'Time : '.$arr[2].'<br>';
+}
+outputComment($comment);
+?>

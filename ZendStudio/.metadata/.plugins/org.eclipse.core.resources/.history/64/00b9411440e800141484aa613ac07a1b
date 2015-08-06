@@ -1,0 +1,13 @@
+<?php
+
+//Connect to the MySQL server using mysqli_connect() with error checking
+$conn = mysqli_connect("127.0.0.1", "PHP02", "PHP02", "PHP02");
+
+
+// error checking
+if (mysqli_connect_errno()) {
+    printf("Connect failed :%s\n", mysqli_connect_error());
+    exit();
+} else {
+    
+}

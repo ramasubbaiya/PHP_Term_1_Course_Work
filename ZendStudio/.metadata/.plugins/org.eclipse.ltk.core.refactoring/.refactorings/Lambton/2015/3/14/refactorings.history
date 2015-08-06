@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Lambton/letschat/styles.css&apos; to &apos;style.css&apos;" description="Rename resource &apos;styles.css&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="letschat/styles.css" name="style.css" stamp="1427744252577" updateReferences="true"/>
+</session>

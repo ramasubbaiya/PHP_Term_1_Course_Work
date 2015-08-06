@@ -1,0 +1,60 @@
+<?php
+
+
+/*
+ * connect to the database
+ * check for connection errors
+ */
+include ('sqlconn.php');
+
+?>
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+
+<?php
+
+include_once 'notes.php';
+//echo $_SESSION['user'];
+
+
+if (isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
+    ECHO $USER;
+} else {
+    echo "<p><b>Please Login </b></p></br>";
+}
+
+$getNotes = retrieveNotes();
+
+ foreach ($getNotes as $notes) {
+        //echo "hii..r";
+        if ($user == $notes['username']) {
+            echo "<a href='notes.php?do=delete&time={$notes['time']}'>Delete Note</a></br>";
+        }else {
+    echo "No notes to display";
+}
+    }
+ 
+
+?>
+
+<!-- // comment // -->
+	<form method="post" action="index.php?do=new">
+		Add Note <input type="text" name="notes" /> <input type='submit'
+			value="Add Note" name='addnote'> <br />
+
+	</form>
+	
+<?php
+
+?>
+
+
+
+
+
+</body>
+</html>

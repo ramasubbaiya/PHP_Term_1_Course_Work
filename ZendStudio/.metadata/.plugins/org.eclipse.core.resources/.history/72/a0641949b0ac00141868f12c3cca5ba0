@@ -1,0 +1,36 @@
+<?php
+
+function createComment($name,$comment,$time){
+     
+    $result=array(
+        $name,$comment,$time
+
+    );
+   // print_r($result);
+    return $result;
+}
+
+
+//echo $result['name'];
+
+
+function outputComment($comment){
+   // createComment('ram','hi','6:30');
+    $arr=createComment('Ram','Awesome Program','6:30');
+    echo 'Name : '.$arr[0].'<br>';
+    echo 'Comment : '.$arr[1].'<br>';
+    echo 'Time : '.$arr[2].'<br>';
+}
+outputComment($comment);
+
+$checkTime = strtotime('09:00:59');
+echo 'Check Time : '.date('H:i:s', $checkTime);
+echo '<hr>';
+
+$loginTime = strtotime('09:01:00');
+$diff = $checkTime - $loginTime;
+echo 'Login Time : '.date('H:i:s', $loginTime).'<br>';
+echo ($diff < 0)? 'Late!' : 'Right time!'; echo '<br>';
+echo 'Time diff in sec: '.abs($diff);
+
+echo '<hr>';

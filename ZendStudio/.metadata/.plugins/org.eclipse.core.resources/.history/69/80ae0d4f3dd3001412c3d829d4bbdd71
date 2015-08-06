@@ -1,0 +1,6 @@
+<?php
+function getNotes(){}
+
+function addNotes(){}
+
+function deleteNotes(){}

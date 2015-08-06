@@ -1,0 +1,24 @@
+<?php
+
+function createComment($name,$comment,$time){
+     
+    $result=array(
+        $name,$comment,$time
+
+    );
+   // print_r($result);
+    return $result;
+}
+
+
+//echo $result['name'];
+
+
+function outputComment($comment){
+   // createComment('ram','hi','6:30');
+    $arr=createComment('ram','hi','6:30');
+    echo $arr[0];
+
+}
+outputComment($comment);
+

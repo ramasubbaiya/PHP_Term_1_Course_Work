@@ -1,0 +1,6 @@
+<?php
+$file=fopen("all_lines.txt","w+");
+$datedLine=date('Y-m-d G:i:s');
+
+$filewrite=fwrite($file,$datedLine); 
+fclose($file);  

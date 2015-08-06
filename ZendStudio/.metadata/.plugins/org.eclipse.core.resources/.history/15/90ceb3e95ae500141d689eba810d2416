@@ -1,0 +1,4 @@
+<?php
+$r = gd_info();
+
+echo"GD version".$r;

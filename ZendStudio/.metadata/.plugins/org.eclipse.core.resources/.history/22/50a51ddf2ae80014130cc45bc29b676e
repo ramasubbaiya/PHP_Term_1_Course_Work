@@ -1,0 +1,22 @@
+<?php
+$EnteredValue="123";
+if(is_numeric($EnteredValue)){
+    $NumericValue=$EnteredValue;
+    echo is_numeric($EnteredValue);
+}
+else{
+   $NumericValue=intval($EnteredValue);
+   echo 'hi'.intval($EnteredValue);
+    
+}
+
+
+echo $EnteredValue;
+
+$round=300;
+
+echo 'Rounded value '.round($round);
+
+echo 'Remainder'.$round%2;
+
+

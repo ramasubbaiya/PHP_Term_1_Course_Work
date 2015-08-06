@@ -1,0 +1,19 @@
+<?php
+function printLine()
+{
+    $file=fopen('all_lines.txt','a');
+    $datedLine=date('Y-m-d G:i:s');
+    if(!$file)
+    {
+        echo"this file is not exist";
+    }
+    else
+    {
+        fputs($file,"$datedLine adfasdf");
+       
+    }
+fclose($file);
+}
+printLine();
+
+?>

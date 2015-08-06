@@ -1,0 +1,32 @@
+<?php
+// $mysql=mysqli_connect('127.0.0.1','PHP02','PHP02','PHP02');
+
+?>
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+
+<?php 
+    // display notes
+    $query="SELECT username,note,timestamp FROM user WHERE username='$username' ";
+?>
+
+<!-- // comment // -->
+<form method="post" action="index.php">
+		Add Note <input type="text"
+			name="note"> 
+	   <p><input type='submit' value='Add Note'></p>
+	</form>
+	<a href="index.php?do=clear"> Clear </a><br/>
+<?php
+
+?>
+
+
+
+
+
+</body>
+</html>

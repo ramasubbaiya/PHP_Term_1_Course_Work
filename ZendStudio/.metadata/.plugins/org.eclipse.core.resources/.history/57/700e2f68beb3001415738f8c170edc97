@@ -1,0 +1,11 @@
+<?php
+function saveComment($name,$comment,$times)
+{
+   $string=$name.'|'.$comment.'|'.$times; 
+   $file="$times.comment";
+   file_put_contents($file, $string);
+   
+}
+saveComment('Eldhose', 'fine', strtotime('02-11-2015 05:31'));
+saveComment('rahul', 'fine', strtotime('03-11-2015 05:31'));
+saveComment('rohit', 'fine', strtotime('04-11-2015 05:31'));

@@ -1,0 +1,4 @@
+<?php
+
+$datedLine=date('Y-m-d G:i:s');
+echo"$datedLine";

@@ -1,0 +1,51 @@
+
+<header>
+	<div class="menu_block ">
+		<div class="container_12">
+			<div class="grid_12">
+				<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+					<ul class="sf-menu">
+						<li class="<?php if($_GET['page']==home)echo"current";?>"><a href="index.php?page=home">Home</a></li>
+						<li class="<?php if($_GET['page']==signup)echo"current";?>"><a href="index.php?page=signup">Sign In/Sign Up</a></li>
+						<li class="<?php if($_GET['page']==quickbook)echo"current";?>"><a href="index.php?page=quickbook">Quick Book</a></li>
+						<li class="<?php if($_GET['page']==listofcars)echo"current";?>"><a href="index.php?page=listofcars">Cars Available</a></li>
+						<li class="<?php if($_GET['page']==webforum)echo"current";?>"><a href="index.php?page=webforum">Web Forum</a></li>
+						<li class="<?php if($_GET['page']==contactus)echo"current";?>"><a href="index.php?page=contactus">ContactUs</a></li>
+						<li class="<?php if($_GET['page']==logout)echo"current";?>"><a href="index.php?page=logout">LOGOUT</a></li>
+					</ul>
+				</nav>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="container_12">
+		<div class="grid_12">
+			<h1>
+				<a href="index.php?home"> <img src="images/logo.png"
+					alt="Your Happy Family">
+				</a>
+			</h1>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+</header>
+
+	<?php
+
+                //Connect to the MySQL server using mysqli_connect() with error checking
+                $conn = mysqli_connect("127.0.0.1", "PHP02", "PHP02", "PHP02");
+                
+                
+                // error checking
+                if (mysqli_connect_errno()) {
+                    printf("Connect failed :%s\n", mysqli_connect_error());
+                    exit();
+                } else {
+                   
+               }
+                session_start();?>
+                			
+		
+			

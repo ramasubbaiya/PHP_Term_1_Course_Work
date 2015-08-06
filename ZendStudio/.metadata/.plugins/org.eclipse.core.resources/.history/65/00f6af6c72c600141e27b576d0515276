@@ -1,0 +1,5 @@
+<?php
+header('location:session_tracker.php');
+session_start();
+session_destroy();
+?>

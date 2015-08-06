@@ -1,0 +1,7 @@
+<?php
+session_start();
+header('location:session_tracker.php');
+
+echo "My session id ". session_id().'</br>';
+session_destroy();
+?>

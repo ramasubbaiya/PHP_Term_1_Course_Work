@@ -1,0 +1,29 @@
+<?php
+
+function timeAgo($time){
+    //    $currentDateTime=strtotime(date('m-d-y h:i:s A'));
+    $curtime = time();
+
+    $timediff = $curtime - $time;
+
+
+    //$temp=$currentDateTime - $time;
+    //  return $interval->format('%R%a days');
+    //echo $current;
+    return $timediff;
+}
+$timedifference= timeAgo((strtotime('04-02-2015 08:30:55 PM')));
+//echo $timedifference;
+
+if(($timedifference/(3600*24))>1)
+
+    echo intval(($timedifference/(3600*24))).'days';
+
+else if(($timedifference/(3600))>1)
+
+    echo intval(($timedifference/(3600))).'minutes';
+else
+    echo intval((($timedifference/60))).'seconds';
+
+
+?>

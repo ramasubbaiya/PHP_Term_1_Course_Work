@@ -1,0 +1,15 @@
+<html>
+<body>
+<?php
+start_session();
+if(isset($_SESSION['access']){
+    $_SESSION['access'][]=time();
+  }else{
+      $_SESSION['access'][]=array(time());
+      
+  }
+  echo count($_SESSION['access']);
+  ?>
+  <a href='clear_access.php'>Clear Acess</a>
+</body>
+ </html>

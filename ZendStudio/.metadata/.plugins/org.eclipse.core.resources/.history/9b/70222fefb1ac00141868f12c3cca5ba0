@@ -1,0 +1,10 @@
+<?php
+function outputComment($output){
+     
+    $arr=createComment('Ram','Awesome Program!','6:30');
+    echo 'Name : '.$arr[0].'<br>';
+    echo 'Comment : '.$arr[1].'<br>';
+    echo 'Time : '.$arr[2].'<br>';
+}
+outputComment($output);
+?>

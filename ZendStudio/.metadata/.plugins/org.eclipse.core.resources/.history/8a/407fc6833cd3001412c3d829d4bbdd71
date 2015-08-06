@@ -1,0 +1,37 @@
+<?php
+ $conn=mysqli_connect('127.0.0.1','PHP02','PHP02','PHP02');
+
+?>
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+
+<?php 
+$username=$_POST['username'];
+
+    if($username)
+    // display notes
+    $query="SELECT username,note,timestamp FROM user WHERE username='$username' ";
+    $result = mysqli_query($conn, $query);
+?>
+
+<!-- // comment // -->
+<form method="post" action="index.php">
+		Add Note <input type="text"
+			name="note"> 
+			<input type='submit' value='delete'>
+	   <p><input type='submit' value='Add Note'></p>
+	</form>
+	<a href="index.php?do=clear"> Clear </a><br/>
+<?php
+
+?>
+
+
+
+
+
+</body>
+</html>

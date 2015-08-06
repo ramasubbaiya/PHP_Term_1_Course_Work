@@ -1,0 +1,16 @@
+<?php
+include"exe3.php";
+function outputComment($output){
+     
+    $arr=createComment('Ram','Awesome Program!','6:30');
+    echo 'Name : '.$arr[0].'<br>';
+    echo 'Comment : '.$arr[1].'<br>';
+    echo 'Time : '.$arr[2].'<br>';
+}
+outputComment($output);
+
+$datetime1 = new DateTime('2011-10-17 07:08:00');
+$datetime2 = new DateTime();
+$interval = $datetime1->diff($datetime2);
+echo $interval->format('%R%a days');
+?>
